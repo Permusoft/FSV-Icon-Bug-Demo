@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ activity_main.xml
+  ~
+  ~ Created by Gregory Kip (Permusoft Corporation) 12/3/2016.
+  ~ Copyright (c) 2016 Permusoft Corporation. All Rights Reserved.
+  -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.permusoft.floatingsearchviewlefticonbugdemo.MainActivity"
+    >
+
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="8dp"
+        app:floatingSearch_searchBarMarginTop="@dimen/activity_vertical_margin"
+        app:floatingSearch_searchBarMarginLeft="@dimen/activity_horizontal_margin"
+        app:floatingSearch_searchBarMarginRight="@dimen/activity_horizontal_margin"
+        app:floatingSearch_dismissOnOutsideTouch="true"
+        app:floatingSearch_showSearchKey="true"
+        app:floatingSearch_dimBackground="false"
+        app:floatingSearch_searchHint="Search"
+        app:floatingSearch_suggestionsListAnimDuration="250"
+        app:floatingSearch_leftActionMode="showHamburger"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Show Home"
+        android:onClick="toggle"
+        />
+
+</RelativeLayout>
