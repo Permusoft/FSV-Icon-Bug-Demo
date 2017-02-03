@@ -15,8 +15,9 @@ import com.arlib.floatingsearchview.FloatingSearchView;
 
 public class MainActivity extends AppCompatActivity {
 
+   boolean focusable = true;
+
    FloatingSearchView searchView;
-   int mode = FloatingSearchView.LEFT_ACTION_MODE_SHOW_HAMBURGER;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
    }
 
    public void toggle(View view) {
-      String text = "Show " + (mode == FloatingSearchView.LEFT_ACTION_MODE_SHOW_HAMBURGER ? "Hamburger" : "Home");
-      ((Button)view).setText(text);
-      mode = mode == FloatingSearchView.LEFT_ACTION_MODE_SHOW_HAMBURGER ? FloatingSearchView.LEFT_ACTION_MODE_SHOW_HOME : FloatingSearchView.LEFT_ACTION_MODE_SHOW_HAMBURGER;
-      searchView.setLeftActionMode(mode);
+      focusable = !focusable;
+      searchView.setSearchFocusable(focusable);
+      ((Button)view).setText(focusable?"Disable":"Enable");
    }
 
 }
